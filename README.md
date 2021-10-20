@@ -78,9 +78,9 @@ cd blob-take-home               # move into the repo directory
 python -m venv env              # make a virtual python environment
 .\env\Scripts\activate          # activate the virtual python environment
 pip install -r requirements.txt # install the required dependencies
-python -m unittest              # runs the tests
+python find_blobs.py            # runs the tests
 # ... hack away on find_blobs.py (don't forget to save) ...
-python -m unittest              # keep running tests to check your progress
+python find_blobs.py            # keep running tests to check your progress
 # ... repeat ...
 ```
 
@@ -91,9 +91,9 @@ cd blob-take-home                # move into the repo directory
 python3 -m venv env              # make a virtual python environment
 ./env/bin/activate               # activate the virtual python environment
 pip3 install -r requirements.txt # install the required dependencies
-python3 -m unittest              # runs the tests
+python3 find_blobs.py            # runs the tests
 # ... hack away on find_blobs.py (don't forget to save) ...
-python3 -m unittest              # keep running tests to check your progress
+python3 find_blobs.py            # keep running tests to check your progress
 # ... repeat ...
 ```
 
@@ -105,5 +105,4 @@ are welcome to use any of its modules. You may specifically find
 [`scipy.ndimage`](https://docs.scipy.org/doc/scipy/reference/ndimage.html)
 helpful.
 
-You can also e-mail `tdunlap` `AT` `utex` `DOT` `com` if you have any questions
-or get stuck.
+You can also e-mail `tdunlap` `AT` `utex` `DOT` `com` if you have any questions or get stuck.
