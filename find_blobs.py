@@ -11,16 +11,17 @@ def find_blobs(path):
 
 
 
-
 # ==================================================================================================================>8==
 # the following code is for the unit tests
 # you should not need to modify this code (unless you want to add more test cases)
 
 import unittest
+import os
+
 class TestFindBlobs(unittest.TestCase):
 
     def test_points(self):
-        blobs = find_blobs('assets/01_points.png')
+        blobs = find_blobs(self._asset_path('01_points.png'))
         self.assertEqual(len(blobs), 3)
         self.assertAlmostEqual(blobs[0][0], 122)
         self.assertAlmostEqual(blobs[0][1], 379)
@@ -30,7 +31,7 @@ class TestFindBlobs(unittest.TestCase):
         self.assertAlmostEqual(blobs[2][1], 289)
 
     def test_black_and_white(self):
-        blobs = find_blobs('assets/02_black_and_white.png')
+        blobs = find_blobs(self._asset_path('02_black_and_white.png'))
         self.assertEqual(len(blobs), 3)
         self.assertAlmostEqual(blobs[0][0], 129, delta=50)
         self.assertAlmostEqual(blobs[0][1], 123, delta=50)
@@ -40,7 +41,7 @@ class TestFindBlobs(unittest.TestCase):
         self.assertAlmostEqual(blobs[2][1], 245, delta=25)
         
     def test_gradient(self):
-        blobs = find_blobs('assets/03_gradient.png')
+        blobs = find_blobs(self._asset_path('03_gradient.png'))
         self.assertEqual(len(blobs), 3)
         self.assertAlmostEqual(blobs[0][0],  77, delta=25)
         self.assertAlmostEqual(blobs[0][1], 126, delta=25)
@@ -50,7 +51,7 @@ class TestFindBlobs(unittest.TestCase):
         self.assertAlmostEqual(blobs[2][1], 172, delta=90)
 
     def test_noisy(self):
-        blobs = find_blobs('assets/04_noisy.png')
+        blobs = find_blobs(self._asset_path('04_noisy.png'))
         self.assertEqual(len(blobs), 3)
         self.assertAlmostEqual(blobs[0][0], 148, delta=75)
         self.assertAlmostEqual(blobs[0][1], 312, delta=75)
@@ -58,6 +59,9 @@ class TestFindBlobs(unittest.TestCase):
         self.assertAlmostEqual(blobs[1][1], 121, delta=20)
         self.assertAlmostEqual(blobs[2][0], 325, delta=40)
         self.assertAlmostEqual(blobs[2][1], 300, delta=40)
+
+    def _asset_path(self, file_name):
+        return os.path.dirname(__file__) + '/assets/' + file_name
 
 if __name__ == "__main__":
     import unittest
