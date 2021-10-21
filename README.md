@@ -10,6 +10,7 @@ blobs where the object should be solid. Seeing a blob here could be an
 indication of a crack, unexpected hole, poor welding seam, etc. Of course,
 before you can classify if a blob is expected or indicates a defect, you have
 to pick them out of a potentially noisy image.
+
 ## Prompt
 
 In this task, we are only concerned about identifying the blobs, not
@@ -52,11 +53,12 @@ A valid result for the function would be:
 ]
 ```
 
-You are provided with the a python project specifything a function
-`find_blobs(image_path)` that can open an image and identify trivially simple
-blobs (i.e. blobs that are only a single pixel). You are also provided with a
-(failing) test suite specifying more complex images. Your goal is to improve
-`find_blobs` so that it passes as many of the test cases as possible.
+You are provided with the a python project with a file, `find_blobs.py`
+specifything a function `find_blobs(image_path)` that can open an image and
+identify trivially simple blobs (i.e. blobs that are only a single pixel). You
+are also provided with a (failing) test suite specifying more complex images.
+Your goal is to improve `find_blobs` so that it passes as many of the test cases
+as possible.
 
 ### Running the tests
 
@@ -105,4 +107,20 @@ are welcome to use any of its modules. You may specifically find
 [`scipy.ndimage`](https://docs.scipy.org/doc/scipy/reference/ndimage.html)
 helpful.
 
-You can also e-mail `tdunlap` `AT` `utex` `DOT` `com` if you have any questions or get stuck.
+You can also e-mail `tdunlap` `AT` `utex` `DOT` `com` if you have any questions
+or get stuck.
+
+### Turning in your project
+
+If you've used an online IDE supplied to you to complete the project, then you
+can simply e-mail your interviewer, and they can download your code off of the
+server. If you used your own local development environment, then send the
+contents of your `find_blobs.py` file to your interviewer.
+
+At your next interview, we'll ask you questions about your implementation, as
+well as some general follow-up questions. One question that we'll ask, that you
+might think about ahead of time is:
+
+> Would your implementation work if sometimes a blob was missing or there was an
+> extra blob? If not, what changes/enhancements could you make to handle these
+> cases?
