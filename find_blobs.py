@@ -59,6 +59,16 @@ class TestFindBlobs(unittest.TestCase):
         self.assertAlmostEqual(blobs[1][1], 121, delta=20)
         self.assertAlmostEqual(blobs[2][0], 325, delta=40)
         self.assertAlmostEqual(blobs[2][1], 300, delta=40)
+    
+    def bonus_perlin_noise(self):
+        blobs = find_blobs(self._asset_path('05_bonus_perlin_noise.png'))
+        self.assertEqual(len(blobs), 3)
+        self.assertAlmostEqual(blobs[0][0], 139, delta=50)
+        self.assertAlmostEqual(blobs[0][1], 92, delta=25)
+        self.assertAlmostEqual(blobs[1][0], 177, delta=25)
+        self.assertAlmostEqual(blobs[1][1], 414, delta=25)
+        self.assertAlmostEqual(blobs[2][0], 345, delta=50)
+        self.assertAlmostEqual(blobs[2][1], 385, delta=40)
 
     def _asset_path(self, file_name):
         return os.path.dirname(__file__) + '/assets/' + file_name
